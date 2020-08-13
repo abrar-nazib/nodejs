@@ -41,3 +41,25 @@ emitter.emit("eventName", {
     /* properties to be passed as object*/
 });
 //emits an event #emitter must be called after listener is defined -> asynschronous stuff
+
+
+
+//-----HTTP module ------------------------------------------------------------------------------------------
+const http = require('http');
+
+const serve = (req, res) => {
+    let url = req.url;
+    // returns the url requested to
+
+    res.write("Things to write in response to the request");
+
+    res.end();
+    // necessary to end the response
+};
+
+const server = http.createServer(serve) //creates a server and takes a function to handle request and response
+server.listen(8080); //listens to the given port number. emits an event(connection) with socket parameter ->emitter
+
+server.on("connection", (socket) => {
+    //EVENT LISTENER FOR EMITTER FUNCTION
+});
