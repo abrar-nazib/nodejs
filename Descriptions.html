@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descriptions</title>
+</head>
+
+<body>
+    <p>
+        <key>Event:</key>
+        <description>A signal that something has happened</description>
+    </p>
+
+    <script>
+        const key = document.getElementsByTagName("key");
+        console.log(key.length);
+        for (let i = 0; i < key.length; i++) {
+            let keyValue = "<b>" + key[i].innerHTML + " <b>";
+            key[i].innerHTML = keyValue;
+            key[i].setAttribute("style", "color: blue;")
+        }
+    </script>
+</body>
+
+</html>
